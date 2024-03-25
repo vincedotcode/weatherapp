@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 
 interface WeatherData {
   currentConditions: any; 
+  latitude?: number;
+  longitude?: number;
 }
 
 interface UseWeatherHook {

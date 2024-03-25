@@ -35,6 +35,7 @@ export default function Home() {
     const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' });
     const { latitude, longitude } = weatherData || {};
 
+
     if (isLoading) {
         setIsLoading(false);
     }
