@@ -13,7 +13,13 @@ const getWeatherData = async (location: string): Promise<WeatherData> => {
     return response.data;
   } catch (error) {
     const axiosError = error as AxiosError;
-    throw new Error(axiosError.response && axiosError.response.data ? axiosError.response.data : "Error fetching weather data");
+    
+    if (axiosError.response && axiosError.response.data) {
+      const errorMessage = typeof axiosError.response.data === 'string' ? axiosError.response.data : JSON.stringify(axiosError.response.data);
+      throw new Error(errorMessage);
+    } else {
+      throw new Error("Error fetching weather data");
+    }
   }
 };
 

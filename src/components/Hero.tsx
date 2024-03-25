@@ -1,10 +1,10 @@
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 type HeroProps = {
     title: string;
     subtitle: string;
     description: string;
-    imageUrl: StaticImageData;
+    imageUrl: string;
 };
 
 export default function Hero({ title, subtitle, description, imageUrl }: HeroProps) {
